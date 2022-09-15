@@ -24,7 +24,7 @@ def play():
         user_try.delete(0, tkinter.END)
 
     # see if the player have won or not
-    elif user_try.get() == win.cget('text'):
+    elif (user_try.get()).lower() == win.cget('text').lower():
         word.config(text='Win !')
         rematch = True
     elif user_try.get() != win.cget('text'):
@@ -47,7 +47,7 @@ def dim():
 
 
 # create all the widget
-word = tkinter.Label(root, text="", font=('bold', 12))
+word = tkinter.Label(root, text="")
 user_try = tkinter.Entry(root)
 find = tkinter.Button(root, text="Shuffle", command=play)
 author = tkinter.Label(root, text="Made by ø")
@@ -62,7 +62,7 @@ pad = 3
 word.pack(pady=pad)
 user_try.pack(pady=pad)
 find.pack(pady=pad)
-get_dim.pack(pady=20)
+# get_dim.pack(pady=20)
 author.pack(side=tkinter.BOTTOM)
 
 
